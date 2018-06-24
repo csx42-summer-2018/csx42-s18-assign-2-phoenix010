@@ -1,5 +1,5 @@
 package fourWayStreetLights.util;
 
-public class FileProcessor {
+public class Results {
 
 }
