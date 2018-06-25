@@ -6,14 +6,29 @@ public class StartStateImplNorth implements StreetLightsStateI{
 	
 	
 
-	public StartStateImplNorth(StreetLightsContext streetLightsContext2) {
-		// TODO Auto-generated constructor stub
-		this.streetLightsContext = streetLightsContext ;
+	public StartStateImplNorth(StreetLightsContext streetLightsContext) {
+	this.streetLightsContext = streetLightsContext ;
 	}
 
 
 
 	public void move(int cntCar) {
-		System.out.println("SInce no car is left to cross. So this is no green zone");
+
+
+		System.out.println("Traffic Light at the North is GREEN");
+
+		if(cntCar > 1 ) {
+			System.out.println("two cars crossed from the NORTH.");
+			cntCar = cntCar-2;
+			System.out.println("After Crossing it should be 6: "+cntCar);
+			streetLightsContext.noOfCarAtIntersection(cntCar);
+			streetLightsContext.setStreetLightState(streetLightsContext.getStartStateImplSouth());
+		}
+		if(cntCar == 1) {
+			System.out.println("Only one is crossed from the NORTH");
+			streetLightsContext.setStreetLightState(streetLightsContext.getNoCarAtIntersection());
+		}
+
+		
 	}
 }

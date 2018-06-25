@@ -18,6 +18,7 @@ public class StreetLightsContext {
 		startStateImplSouth = new StartStateImplSouth(this);
 		noCarAtIntersection = new NoCarAtIntersection(this);
 		this.cntCar = cntCar;
+		System.out.println("the value of cntCar is: "+cntCar);
 		if(cntCar <= 0) {
 			streetLightsStateI = noCarAtIntersection;
 		}
@@ -36,17 +37,23 @@ public class StreetLightsContext {
 	}
 	
 	public void intersection() {
+//		int cntCar = noOfCarAtIntersection();
+//		System.out.println("In Context class:"+cntCar );
 		streetLightsStateI .move(cntCar);
 	}
-	public void noOfCarAtIntersection() {
-		System.out.println("Numbers of cars at Intersection before crossing...");
-		if(cntCar != 0 && cntCar == 1) {
-			cntCar = cntCar - 2;
+	public int noOfCarAtIntersection(int number) {
+//		System.out.println("Numbers of cars at Intersection before crossing...");
+		this.cntCar = number;
+		if(this.cntCar != 0 && this.cntCar == 1) {
+			this.cntCar = cntCar - 2;
+			return this.cntCar;
 		}
-		if(cntCar == 1) {
-			cntCar = cntCar - 1;
-			System.out.println("Intersection completed");
-		}
+//		if(cntCar == 1) {
+//			cntCar = cntCar - 1;
+//			System.out.println("Intersection completed");
+//			return cntCar;
+//		}
+		return this.cntCar;
 	}
 	
 	void setStreetLightState(StreetLightsStateI streetLightsStateI) {

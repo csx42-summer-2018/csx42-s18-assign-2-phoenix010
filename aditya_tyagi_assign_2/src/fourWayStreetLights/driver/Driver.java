@@ -19,10 +19,23 @@ public class Driver {
 			b = scanner.nextLine();
 			String c= scanner.nextLine();
 			noOfCars = Integer.parseInt(scanner.nextLine()); 
-			System.out.printf("%s\n%s\n%s\n%d\n",a,b ,c,noOfCars);
+//			System.out.printf("%s\n%s\n%s\n%d\n",a,b ,c,noOfCars);
 			StreetLightsContext contextClass = new StreetLightsContext(noOfCars, b);
-			contextClass.intersection();
-//			System.out.println(c);
+//			contextClass.intersection();
+//			System.out.println();
+//			contextClass.intersection();
+//			System.out.println();
+//			contextClass.intersection();
+//			System.out.println();
+//			contextClass.intersection();
+//			System.out.println();
+//			contextClass.intersection();
+			while(noOfCars>= 0) {
+				contextClass.intersection();
+				System.out.println();
+				System.out.println();
+				noOfCars = noOfCars/2 ;
+			}
 			}
 }
 		catch(Exception e) {

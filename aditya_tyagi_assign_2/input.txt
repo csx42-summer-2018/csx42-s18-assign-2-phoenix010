@@ -1,7 +1,13 @@
-Traffic Light is Greeen at
-East
 Number of vehicles 
-12
+10
+Traffic Lights at the East is
+Green
+Traffic Lights at the South is
+Red
+Traffic Lights at the North is 
+Red
+Traffic Lights at the West is
+Red
 
 
 

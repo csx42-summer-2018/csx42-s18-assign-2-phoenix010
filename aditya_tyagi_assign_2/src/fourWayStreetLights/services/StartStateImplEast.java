@@ -11,13 +11,15 @@ public class StartStateImplEast implements StreetLightsStateI{
 		System.out.println("Traffic Light at the East is GREEN");
 
 		if(cntCar > 1 ) {
-			System.out.println("two cars crossed from the east.");
+			System.out.println("two cars crossed from the EAST.");
 			cntCar = cntCar-2;
 			System.out.println("After Crossing it should be 10: "+cntCar);
+			streetLightsContext.noOfCarAtIntersection(cntCar);
 			streetLightsContext.setStreetLightState(streetLightsContext.getStartStateImplWest());
+//			streetLightsContext.noOfCarAtIntersection(cntCar);
 		}
 		if(cntCar == 1) {
-			System.out.println("Only one is crossed");
+			System.out.println("Only one Car is crossed from the East");
 			streetLightsContext.setStreetLightState(streetLightsContext.getNoCarAtIntersection());
 		}
 
