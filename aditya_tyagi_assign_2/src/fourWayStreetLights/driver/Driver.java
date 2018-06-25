@@ -8,28 +8,17 @@ public class Driver {
 	private static Scanner scanner;
 
 	public static void main(String[] args) {
+		int c=0;
 		try {
 			scanner = new Scanner(new File("input.txt"));
 			
 			while(scanner.hasNext()) {
 			String a = scanner.nextLine();
 			String b = scanner.nextLine();
-			
-			String array1[]= b.split(" ");
-		
-			int size = array1.length;
-			System.out.println(size);
-
-			if(size ==1) {
-				
+			c = scanner.nextInt(); 
+			System.out.printf("%s\n%s\n",a,b);
+//			System.out.println(c);
 			}
-			else {
-				
-				
-				
-				
-				}
-		    }
 		      
 		   
 	    }
@@ -40,7 +29,7 @@ public class Driver {
 		finally {
 			scanner.close();
 	}
-		
+		System.out.println(c);
 	}
 }
 

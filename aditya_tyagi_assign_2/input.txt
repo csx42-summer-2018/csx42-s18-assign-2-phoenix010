@@ -1,4 +1,5 @@
-Lights which are green:
-East West
+Traffic Light at the East is Green
+Number of vehicles 
+12
 
 
