@@ -11,15 +11,27 @@ public class StreetLightsContext {
 	StreetLightsStateI streetLightsStateI = noCarAtIntersection;
 	int cntCar = 0; //number of cars at intersection point before crossing
 	
-	public StreetLightsContext(int cntCar) {
+	public StreetLightsContext(int cntCar, String direction) {
 		startStateImplEast = new StartStateImplEast(this);
 		startStateImplWest = new StartStateImplWest(this);
 		startStateImplNorth = new StartStateImplNorth(this);
 		startStateImplSouth = new StartStateImplSouth(this);
 		noCarAtIntersection = new NoCarAtIntersection(this);
 		this.cntCar = cntCar;
-		if(cntCar > 0) {
+		if(cntCar <= 0) {
+			streetLightsStateI = noCarAtIntersection;
+		}
+		if(direction.equalsIgnoreCase("East")) {
 			streetLightsStateI = startStateImplEast;
+		}
+		if(direction.equalsIgnoreCase("West")) {
+			streetLightsStateI = startStateImplWest;
+		}
+		if(direction.equalsIgnoreCase("South")) {
+			streetLightsStateI = startStateImplSouth;
+		}
+		if(direction.equalsIgnoreCase("North")) {
+			streetLightsStateI = startStateImplNorth;
 		}
 	}
 	
@@ -58,7 +70,7 @@ public class StreetLightsContext {
 	public StreetLightsStateI getStreetLightsStateI() {
 		return streetLightsStateI;
 	}
-	public int getCar() {
+	public int getCntCar() {
 		return cntCar;
 	}
 	

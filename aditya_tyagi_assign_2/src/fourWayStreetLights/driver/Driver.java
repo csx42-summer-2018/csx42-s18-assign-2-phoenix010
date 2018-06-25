@@ -1,27 +1,30 @@
 package fourWayStreetLights.driver;
 
 import java.io.File;
-import java.io.FileReader;
 import java.util.Scanner;
+
+import fourWayStreetLights.services.StreetLightsContext;
 
 public class Driver {
 	private static Scanner scanner;
 
 	public static void main(String[] args) {
-		int c=0;
+		int noOfCars=0;
+		String b = " ";
 		try {
 			scanner = new Scanner(new File("input.txt"));
 			
 			while(scanner.hasNext()) {
 			String a = scanner.nextLine();
-			String b = scanner.nextLine();
-			c = scanner.nextInt(); 
-			System.out.printf("%s\n%s\n",a,b);
+			b = scanner.nextLine();
+			String c= scanner.nextLine();
+			noOfCars = Integer.parseInt(scanner.nextLine()); 
+			System.out.printf("%s\n%s\n%s\n%d\n",a,b ,c,noOfCars);
+			StreetLightsContext contextClass = new StreetLightsContext(noOfCars, b);
+			contextClass.intersection();
 //			System.out.println(c);
 			}
-		      
-		   
-	    }
+}
 		catch(Exception e) {
 			System.out.println("Could not open the file");
 			e.printStackTrace();
@@ -29,7 +32,9 @@ public class Driver {
 		finally {
 			scanner.close();
 	}
-		System.out.println(c);
+//		StreetLightsContext contextClass = new StreetLightsContext(noOfCars, b);
+		
+		
 	}
 }
 
