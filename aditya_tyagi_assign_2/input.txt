@@ -1,13 +1,13 @@
 Number of vehicles 
-10
-Traffic Lights at the East is
-Green
-Traffic Lights at the South is
-Red
-Traffic Lights at the North is 
-Red
-Traffic Lights at the West is
-Red
+2
+Status of Traffic Lights:
+East-red
+West-red
+North-red
+South-green
 
+
+
+ 
 
 

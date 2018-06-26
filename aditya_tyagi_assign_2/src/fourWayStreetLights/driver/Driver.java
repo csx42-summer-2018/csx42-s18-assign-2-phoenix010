@@ -16,26 +16,36 @@ public class Driver {
 			
 			while(scanner.hasNext()) {
 			String a = scanner.nextLine();
+			System.out.println(a);
 			b = scanner.nextLine();
-			String c= scanner.nextLine();
-			noOfCars = Integer.parseInt(scanner.nextLine()); 
-//			System.out.printf("%s\n%s\n%s\n%d\n",a,b ,c,noOfCars);
-			StreetLightsContext contextClass = new StreetLightsContext(noOfCars, b);
-//			contextClass.intersection();
-//			System.out.println();
-//			contextClass.intersection();
-//			System.out.println();
-//			contextClass.intersection();
-//			System.out.println();
-//			contextClass.intersection();
-//			System.out.println();
-//			contextClass.intersection();
-			while(noOfCars>= 0) {
-				contextClass.intersection();
-				System.out.println();
-				System.out.println();
-				noOfCars = noOfCars/2 ;
-			}
+			noOfCars = Integer.parseInt(b); 
+			String c = scanner.nextLine();
+			String east = scanner.nextLine();
+			
+			String[] splitStringArray = east.split("-");
+			String lightAtEast = splitStringArray[1];
+//			System.out.println(lightAtEast);
+			
+			String west = scanner.nextLine();
+			splitStringArray = west.split("-");
+			String lightAtWest = splitStringArray[1];
+//			System.out.println(lightAtWest);
+			
+			String north = scanner.nextLine();
+			splitStringArray = north.split("-");
+			String lightAtNorth = splitStringArray[1];
+//			System.out.println(lightAtNorth);
+
+			
+			String south = scanner.nextLine();
+			splitStringArray = south.split("-");
+			String lightAtSouth = splitStringArray[1];
+//			System.out.println(lightAtSouth);
+
+			
+			StreetLightsContext contextClass = new StreetLightsContext(noOfCars, lightAtEast,lightAtWest,lightAtNorth,lightAtSouth);
+			contextClass.intersection();
+			
 			}
 }
 		catch(Exception e) {

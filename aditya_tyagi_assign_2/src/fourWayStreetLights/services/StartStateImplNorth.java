@@ -20,13 +20,20 @@ public class StartStateImplNorth implements StreetLightsStateI{
 		if(cntCar > 1 ) {
 			System.out.println("two cars crossed from the NORTH.");
 			cntCar = cntCar-2;
-			System.out.println("After Crossing it should be 6: "+cntCar);
+			System.out.println("After Crossing it should be 10: "+cntCar);
 			streetLightsContext.noOfCarAtIntersection(cntCar);
-			streetLightsContext.setStreetLightState(streetLightsContext.getStartStateImplSouth());
+//			streetLightsContext.setStreetLightState(streetLightsContext.getStartStateImplSouth());
 		}
 		if(cntCar == 1) {
-			System.out.println("Only one is crossed from the NORTH");
+
+			System.out.println("Only one Car is crossed from the North");
+			cntCar = cntCar-1;
+			System.out.println("After Crossing it should be 0: "+cntCar);
+			streetLightsContext.noOfCarAtIntersection(cntCar);
 			streetLightsContext.setStreetLightState(streetLightsContext.getNoCarAtIntersection());
+			streetLightsContext.noCarAtIntersection.move(cntCar);
+			
+		
 		}
 
 		
