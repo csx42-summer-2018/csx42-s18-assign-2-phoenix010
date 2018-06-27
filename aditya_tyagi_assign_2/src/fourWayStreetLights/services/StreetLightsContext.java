@@ -23,12 +23,18 @@ public class StreetLightsContext {
 		startStateImplNorth = new StartStateImplNorth(this);
 		startStateImplSouth = new StartStateImplSouth(this);
 		noCarAtIntersection = new NoCarAtIntersection(this);
+		startStateImplEastWest = new StartStateImplEastWest(this);
+		startStateImplNorthEast = new StartStateImplNorthEast(this);
+		startStateImplNorthSouth = new StartStateImplNorthSouth(this);
+		startStateImplNorthWest = new StartStateImplNorthWest(this);
+		startStateImplSouthEast = new StartStateImplSouthEast(this);
+		startStateImplSouthWest = new StartStateImplSouthWest(this);
 		this.cntCar = cntCar;
 		System.out.println("The value of cntCar is: "+cntCar);
 		if(cntCar <= 0) {
 			streetLightsStateI = noCarAtIntersection;
 		}
-		
+		else {
 		if(lightAtEast.equalsIgnoreCase("green")) {
 			System.out.println("LOL");
 			streetLightsStateI = startStateImplEast;
@@ -44,7 +50,9 @@ public class StreetLightsContext {
 			streetLightsStateI = startStateImplSouth;
 		}
 		if(lightAtNorth.equalsIgnoreCase("green") && lightAtSouth.equalsIgnoreCase("green")) {
+			System.out.println("tyagi");
 			streetLightsStateI = startStateImplNorthSouth;
+			System.out.println("State set");
 		}
 		if(lightAtNorth.equalsIgnoreCase("green") && lightAtEast.equalsIgnoreCase("green")){
 			streetLightsStateI =  startStateImplNorthEast;
@@ -64,6 +72,7 @@ public class StreetLightsContext {
 		if(lightAtNorth.equalsIgnoreCase("red") && lightAtSouth.equalsIgnoreCase("red") && lightAtEast.equalsIgnoreCase("red") && lightAtWest.equalsIgnoreCase("red")) {
 			streetLightsStateI = noCarAtIntersection ;
 		}
+		}
 			
 		
 	}
@@ -72,7 +81,7 @@ public class StreetLightsContext {
 //		int cntCar = noOfCarAtIntersection();
 //		System.out.println("In Context class:"+cntCar );
 		System.out.println("Aditya");
-		streetLightsStateI .move(cntCar);
+		streetLightsStateI.move(cntCar);
 	}
 	public int noOfCarAtIntersection(int number) {
 //		System.out.println("Numbers of cars at Intersection before crossing...");

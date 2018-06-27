@@ -54,6 +54,7 @@ public class Driver {
 		}
 		finally {
 			scanner.close();
+
 	}
 //		StreetLightsContext contextClass = new StreetLightsContext(noOfCars, b);
 		

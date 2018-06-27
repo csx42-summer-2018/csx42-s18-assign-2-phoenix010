@@ -1,9 +1,9 @@
 Number of vehicles 
-2
+6
 Status of Traffic Lights:
 East-red
 West-red
-North-red
+North-green
 South-green
 
 

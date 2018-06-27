@@ -7,5 +7,7 @@ public class StartStateImplNorthWest implements StreetLightsStateI {
 		this.streetLightsContext = streetLightsContext ;
 	}
 	
-	public void move(int cntCar) {}
+	public void move(int cntCar) {
+		System.out.println("NorthWest is running");
+	}
 }
