@@ -13,6 +13,12 @@ public class StreetLightsContext {
 	StreetLightsStateI startStateImplSouthEast;
 	StreetLightsStateI startStateImplSouthWest;
 	StreetLightsStateI noCarAtIntersection;
+	StreetLightsStateI startStateImplNorthSouthEast;
+	StreetLightsStateI startStateImplSouthEastWest;//====
+	StreetLightsStateI startStateImplEastWestNorth;
+	StreetLightsStateI startStateImplWestNorthSouth;//898989898
+	StreetLightsStateI startStateImplNorthSouthEastWest;
+	StreetLightsStateI startStateImplAllRed;
 	
 	StreetLightsStateI streetLightsStateI = noCarAtIntersection;
 	int cntCar = 0; //number of cars at intersection point before crossing
@@ -29,18 +35,22 @@ public class StreetLightsContext {
 		startStateImplNorthWest = new StartStateImplNorthWest(this);
 		startStateImplSouthEast = new StartStateImplSouthEast(this);
 		startStateImplSouthWest = new StartStateImplSouthWest(this);
+		startStateImplNorthSouthEast = new StartStateImplNorthSouthEast(this); //check this line 
+		startStateImplSouthEastWest = new StartStateImplSouthEastWest(this);
+		startStateImplEastWestNorth = new StartStateImplEastWestNorth(this);//78787
+		startStateImplWestNorthSouth = new StartStateImplWestNorthSouth(this);
+		startStateImplNorthSouthEastWest = new StartStateImplNorthSouthEastWest(this);
 		this.cntCar = cntCar;
+		startStateImplAllRed = new StartStateImplAllRed(this);
 		System.out.println("The value of cntCar is: "+cntCar);
 		if(cntCar <= 0) {
 			streetLightsStateI = noCarAtIntersection;
 		}
 		else {
 		if(lightAtEast.equalsIgnoreCase("green")) {
-			System.out.println("LOL");
 			streetLightsStateI = startStateImplEast;
 		}
 		if(lightAtWest.equalsIgnoreCase("green")) {
-			
 			streetLightsStateI = startStateImplWest;
 		}
 		if(lightAtNorth.equalsIgnoreCase("green")) {
@@ -50,9 +60,7 @@ public class StreetLightsContext {
 			streetLightsStateI = startStateImplSouth;
 		}
 		if(lightAtNorth.equalsIgnoreCase("green") && lightAtSouth.equalsIgnoreCase("green")) {
-			System.out.println("tyagi");
 			streetLightsStateI = startStateImplNorthSouth;
-			System.out.println("State set");
 		}
 		if(lightAtNorth.equalsIgnoreCase("green") && lightAtEast.equalsIgnoreCase("green")){
 			streetLightsStateI =  startStateImplNorthEast;
@@ -69,10 +77,27 @@ public class StreetLightsContext {
 		if(lightAtEast.equalsIgnoreCase("green") && lightAtWest.equalsIgnoreCase("green")) {
 			streetLightsStateI = startStateImplEastWest;
 		}
-		if(lightAtNorth.equalsIgnoreCase("red") && lightAtSouth.equalsIgnoreCase("red") && lightAtEast.equalsIgnoreCase("red") && lightAtWest.equalsIgnoreCase("red")) {
-			streetLightsStateI = noCarAtIntersection ;
+		if(lightAtNorth.equalsIgnoreCase("green") && lightAtSouth.equalsIgnoreCase("green") && lightAtEast.equalsIgnoreCase("green")) {
+			streetLightsStateI = startStateImplNorthSouthEast;
 		}
+		if(lightAtSouth.equalsIgnoreCase("green") && lightAtEast.equalsIgnoreCase("green") && lightAtWest.equalsIgnoreCase("green")) {
+			streetLightsStateI =  startStateImplSouthEastWest;
 		}
+		if(lightAtEast.equalsIgnoreCase("green")&& lightAtWest.equalsIgnoreCase("green") && lightAtNorth.equalsIgnoreCase("green")) {
+			streetLightsStateI = startStateImplEastWestNorth;
+		}
+		if(lightAtWest.equalsIgnoreCase("green") && lightAtNorth.equalsIgnoreCase("green") && lightAtSouth.equalsIgnoreCase("green")) {
+			streetLightsStateI = startStateImplWestNorthSouth;
+		}
+		if(lightAtEast.equalsIgnoreCase("green") && lightAtNorth.equalsIgnoreCase("green") && lightAtSouth.equalsIgnoreCase("green") && lightAtWest.equalsIgnoreCase("green") ) {
+			streetLightsStateI = startStateImplNorthSouthEastWest;
+		}
+		if(lightAtEast.equalsIgnoreCase("red") && lightAtNorth.equalsIgnoreCase("red") && lightAtSouth.equalsIgnoreCase("red") && lightAtWest.equalsIgnoreCase("red") ) {
+			streetLightsStateI = startStateImplAllRed;
+		}
+		
+		}
+		
 			
 		
 	}
@@ -101,6 +126,7 @@ public class StreetLightsContext {
 	void setStreetLightState(StreetLightsStateI streetLightsStateI) {
 		this.streetLightsStateI = streetLightsStateI ;
 	}
+
 	public StreetLightsStateI getStartStateImplEast() {
 		return startStateImplEast;
 	}
@@ -145,6 +171,26 @@ public class StreetLightsContext {
 		return noCarAtIntersection;
 	}
 
+	public StreetLightsStateI getStartStateImplNorthSouthEast() {
+		return startStateImplNorthSouthEast;
+	}
+
+	public StreetLightsStateI getStartStateImplSouthEastWest() {
+		return startStateImplSouthEastWest;
+	}
+
+	public StreetLightsStateI getStartStateImplEastWestNorth() {
+		return startStateImplEastWestNorth;
+	}
+
+	public StreetLightsStateI getStartStateImplWestNorthSouth() {
+		return startStateImplWestNorthSouth;
+	}
+
+	public StreetLightsStateI getStartStateImplNorthSouthEastWest() {
+		return startStateImplNorthSouthEastWest;
+	}
+
 	public StreetLightsStateI getStreetLightsStateI() {
 		return streetLightsStateI;
 	}
@@ -152,9 +198,6 @@ public class StreetLightsContext {
 	public int getCntCar() {
 		return cntCar;
 	}
-
-	
-	
-	
+		
 	}
   
