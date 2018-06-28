@@ -1,3 +1,7 @@
 package fourWayStreetLights.util;
 
-public interface FileDisplayInterface {}
+
+public interface FileDisplayInterface {
+
+	void writeToFile(String s);
+}

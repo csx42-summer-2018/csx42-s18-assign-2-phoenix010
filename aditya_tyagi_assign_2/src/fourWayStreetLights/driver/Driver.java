@@ -5,7 +5,7 @@ import fourWayStreetLights.services.StreetLightsContext;
 import fourWayStreetLights.util.StringProcessor;
 
 public class Driver {
-	public static void main(String[] args)throws IOException {
+	public static void main(String[] args)throws IOException,NullPointerException {
 		
 		try {
 		String file = args[0];
@@ -33,8 +33,11 @@ public class Driver {
 		catch(ArrayIndexOutOfBoundsException ex) {
 			System.out.println("You need to insert some input in your command line");
 			System.out.println("Exiting");
-//			ex.printStackTrace();
+			ex.printStackTrace();
 			
+		}catch(NullPointerException e) {
+			System.out.println("Your input values are wrong.Example: you are giving wromg input to traffic lights");
+			e.printStackTrace();
 		}
 	}
 }

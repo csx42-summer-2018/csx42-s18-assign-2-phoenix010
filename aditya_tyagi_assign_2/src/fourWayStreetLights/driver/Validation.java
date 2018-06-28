@@ -1,6 +1,13 @@
 package fourWayStreetLights.driver;
-import java.lang.NumberFormatException;
+//import java.lang.NumberFormatException;
 public class Validation {
+	/**
+	 * This method validates the command line arguments.
+	 * It checks that whether the user have given more than zero arguments,
+	 * but not more than three arguments
+	 *  
+	 * @param args args is the string array which comprises our input 
+	 */
 
 	public void cmdValidation(String [] args) {
 		if(args.length == 0) {

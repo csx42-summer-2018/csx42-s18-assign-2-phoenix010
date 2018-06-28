@@ -102,12 +102,7 @@ public class StreetLightsContext {
 		
 	}
 	
-	public void intersection() {
-//		int cntCar = noOfCarAtIntersection();
-//		System.out.println("In Context class:"+cntCar );
-		System.out.println("Aditya");
-		streetLightsStateI.move(cntCar);
-	}
+
 	public int noOfCarAtIntersection(int number) {
 //		System.out.println("Numbers of cars at Intersection before crossing...");
 		this.cntCar = number;
@@ -121,6 +116,12 @@ public class StreetLightsContext {
 //			return cntCar;
 //		}
 		return this.cntCar;
+	}
+	public void intersection() {
+//		int cntCar = noOfCarAtIntersection();
+//		System.out.println("In Context class:"+cntCar );
+		System.out.println("Aditya");
+		streetLightsStateI.move(cntCar);
 	}
 	
 	void setStreetLightState(StreetLightsStateI streetLightsStateI) {

@@ -1,0 +1,1 @@
+Two cars are croosed from the South and the traffic light at the South is turned from green to red. Two cars are crossed from the west and its traffic light is turned from green to red. Number of cars left after intersection: 1
