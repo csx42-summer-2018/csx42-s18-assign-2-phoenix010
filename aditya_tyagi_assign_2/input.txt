@@ -1,10 +1,4 @@
-Number of vehicles 
-6
-Status of Traffic Lights:
-East-red
-West-red
-North-red
-South-red
+Number of vehicles,6,Status of Traffic Lights,East-red,West-red,North-red,South-green
 
 
 
