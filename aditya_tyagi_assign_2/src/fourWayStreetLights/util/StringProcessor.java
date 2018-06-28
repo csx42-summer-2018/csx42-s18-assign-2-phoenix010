@@ -4,14 +4,14 @@ import java.io.IOException;
 
 public class StringProcessor {
 	
-public String processing()throws IOException {
+public String processing(String input)throws IOException {
 	
 	String str ="";
 	
 	try{
 		FileProcessor fileprocessor = new FileProcessor();
 	
-	String inp = fileprocessor.readLine();
+	String inp = fileprocessor.readLine(input);
 	
 	String[] file = inp.split(",");
 	

@@ -6,9 +6,16 @@ import fourWayStreetLights.util.StringProcessor;
 
 public class Driver {
 	public static void main(String[] args)throws IOException {
+		
+		try {
+		String file = args[0];
+		Validation vd = new Validation();
+		vd.cmdValidation(args);
 		StringProcessor str = new StringProcessor();
-		String input = str.processing();
+		String input = str.processing(file);
+		
 //		System.out.println(input);
+		
 		String [] splitArray = input.split(",");
 		
 		String noOfCars = splitArray[0];
@@ -20,7 +27,15 @@ public class Driver {
 		
 		StreetLightsContext streetlightcontext = new StreetLightsContext(cntCar, lightAtEast, lightAtWest, lightAtNorth, lightAtSouth);
 		streetlightcontext.intersection();
-		
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		catch(ArrayIndexOutOfBoundsException ex) {
+			System.out.println("You need to insert some input in your command line");
+			System.out.println("Exiting");
+//			ex.printStackTrace();
+			
+		}
 	}
 }
 

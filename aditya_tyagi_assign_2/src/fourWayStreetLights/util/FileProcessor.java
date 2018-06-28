@@ -9,9 +9,9 @@ import java.io.File;
 public class FileProcessor {
 	
 	
-	public String readLine() throws IOException{
+	public String readLine(String fileName) throws IOException{
 		
-		String fileName = "input.txt";
+//		String fileName = "input.txt";
 		String input= "";
 	try (Scanner scanner = new Scanner(new File(fileName))) {
 
@@ -26,5 +26,7 @@ public class FileProcessor {
 	}
 	return input;
 }
+
+	
 	
 }
